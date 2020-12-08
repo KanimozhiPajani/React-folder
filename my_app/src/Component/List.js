@@ -38,6 +38,28 @@ const jobs = [
     post:'Frontend Developer',
     company:'Albert Baurer',
     skills: [ {topic:'Javascript'},{topic:'CSS'},{topic:'HTML'} ]
+},
+
+
+{
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm-GFGub41swy3BsxlgUZbXFOuGiyimidezQ&usqp=CAU',
+    post:'Director Of Engineering',
+    company:'Britewel',
+    skills: [ {topic:'Javascript'} ]
+},
+
+{
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYI75uwOjle3TL0hdeu_4HNpCnWu-Hqj_UzQ&usqp=CAU',
+    post:'Technical Support Engineer (Python)',
+    company:'Scrapinhub',
+    skills: [ {topic:'Python'},{topic:'Javascript'},{topic:'HTML'}, ]
+},
+
+{
+    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm-GFGub41swy3BsxlgUZbXFOuGiyimidezQ&usqp=CAU',
+    post:'Frontend Developer',
+    company:'Albert Baurer',
+    skills: [ {topic:'Javascript'},{topic:'CSS'},{topic:'HTML'} ]
 }
 
 ]
