@@ -18,3 +18,22 @@
         text-align: left;
         padding-left: 20px;
     }
+
+    /*Random Picker*/
+
+    .title{
+        text-shadow:0px 5px #800f51;
+        font-family:  'Faster One', cursive;;
+    }
+    .winner{
+        border: 2px solid #d92366;
+        font-family:' niccone';
+        color:antiquewhite;
+        border-radius: 10px;
+    }
+    .button{
+        background-color: #d9b2c0;
+        border: #d92366;
+        color: #d92366;
+    }
+    
