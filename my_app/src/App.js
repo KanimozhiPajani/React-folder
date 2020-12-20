@@ -3,12 +3,13 @@ import './App.css';
 import Joblist from './Component/List';
 
 import Topic from './Component/topic';
+import RandomNamePicker from './Component/RandomNamePicker';
 
 function App() {
   return (
     <div className="App">
       
-      <Joblist />
+      <RandomNamePicker />
     </div>
   );
 }
