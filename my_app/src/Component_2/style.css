@@ -1,0 +1,59 @@
+.summer{
+    background-image: url('./Images/summer.jpg');
+    height: 100vh;
+    }
+.winter{
+    background-image: url('./Images/winter.jpg');
+    height: 100vh;
+}
+
+.summer i{
+    color: #ffcc66;
+}
+
+.winter i{
+    color:#3399ff;
+}
+
+.summer h2{
+    color:#ffcc66 ;
+    font-family:'Berkshire Swash', cursive;
+    font-weight: bolder;
+    font-size: 40px;
+    align-items: center;
+    padding-top: 20%;
+    
+}
+
+.winter h2{
+    color:#3399ff ;
+    font-family:  'Italianno', cursive;
+    font-weight: bolder;
+    font-size: 40px;
+    align-items: center;
+    padding-top: 20%;
+}
+.error{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: center;
+    padding-top: 20%;
+}
+.spin{
+    font-size: 12px;
+    color: blanchedalmond;
+}
+
+.icon-left{
+    position: absolute;
+    right:10px;
+    top: 15px;
+}
+.icon-right{
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
+}
+
+ 
