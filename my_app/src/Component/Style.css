@@ -1,4 +1,7 @@
-.primary{
+    body{
+    box-sizing: border-box;
+    }
+   .primary{
     box-sizing: border-box;
     margin:15px;
     padding: 15px;
@@ -19,6 +22,7 @@
         padding-left: 20px;
     }
 
+<<<<<<< HEAD
     /*Random Picker*/
 
     .title{
@@ -37,3 +41,111 @@
         color: #d92366;
     }
     
+=======
+    /*--------Random Picker---------*/
+
+    /*---overall text color--*/
+    .color{
+        color: white;
+    }
+    /*--TitleNav--*/
+    .navbar_1{
+        background-color:#264d73;
+        height: 40px;
+    }
+    /*--Title--*/
+    .link_1{
+        color: white;
+        float: left;
+    }
+    /*--QsNav--*/
+    .navbar{
+        background-color:#264d73;
+        height: 60px;
+        position: relative;
+    }
+    /*--Qs--*/
+    .link{
+        color: white;
+    }
+/*--BowlImage--*/
+    .image{
+        height: 150px;
+        width: 180px;
+        border: 2px solid orange;
+        padding: 0px;
+    }
+/*--CupImage--*/
+    .winner{
+      width: 400px;
+      height: 300px;
+      justify-content: center;
+    }
+/*--BackgroundGreen--*/
+    .first{
+        background-color: #006666;
+    }
+/*--ToipcBg--*/
+    .second{
+        background: linear-gradient(to right, #4d79ff 0%, #4da6ff 100%);
+    }
+/*--ColRow--*/
+    .col_1{
+       background-color:  #4da6ff;
+    }
+    .col_2{
+        background-color:#4d79ff;
+    }
+    .row{
+          margin: 0px;
+     }
+/*--Textarea--*/
+    .textarea{
+         width: 26rem;
+         height: 8rem;
+         border-style: outset;
+         border-color: darkcyan;
+         background-color:#e9edf5;
+     }
+/*--button--*/
+     .buttonEnter{
+         padding: 8px 10px 8px 10px;
+         width: fit-content;
+         border-radius: 5px;
+         font-size: 20px;
+         background-color: #777e8c;
+         color: white;
+     }
+/*--Coltext--*/
+     .para_1{
+       
+         line-height: 2rem;
+         font-size: 18px;
+     }
+/*--steps--*/
+     .steps{
+         font-size: 20px;
+         text-align: left;
+         padding-left: 5rem;
+         font-weight: 1orem;
+     }
+/*--Namelist--*/
+     .item{
+        border: 2px solid orange;
+        background-color: #f5b840;
+        color: #197fe6;
+        padding: 5px;
+        margin: 20px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        display:inline-flex;
+        width: fit-content;
+        border-radius: 20px;
+     }
+/*--WinnerName--*/
+     .winnerName{
+         color: rgba(236, 132, 27, 0.904);
+         text-transform: capitalize;
+     }
+>>>>>>> Branch-1
