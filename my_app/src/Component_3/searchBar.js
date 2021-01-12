@@ -1,34 +1,35 @@
 import React, { Component } from 'react'
 
  class SearchBar extends Component {
+constructor(props) {
+    super(props)
 
-    constructor(props) {
-        super(props)
-    
-        this.state = {
-             value : ''
+    this.state = {
+         searched:''
+    }
+}
+change =(event) =>{
+    this.setState(
+        {
+        searched : event.target.value
         }
-    }
-    
-
-    change = (e) => {
-        this.setState({
-       value : e.target.value})
-    }
-    formSubmit = (e) => {
-        e.preventDefault();
-        this.props.onSumbit(this.state.value);
-    }
+    )
+   
+}
+changeSub=(event)=>{
+    event.preventDefault();
+    this.props.onSubmit(this.state.searched);
+}
 
     render() {
         return (
             <div>
-               <form onSubmit={this.formSubmit}>
-                   <label>Search</label>
-                   <input type='text'
-                    placeholder='Search here'
-                    onChange={this.change} />
-               </form> 
+                <form onSubmit={this.changeSub}>
+                <input type='text' 
+                value={this.state.searched} onChange={this.change}  placeholder='search'/>
+                <button>Sumbit</button>
+                </form>
+                
             </div>
         )
     }
