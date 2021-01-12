@@ -5,11 +5,13 @@ import Joblist from './Component/List';
 import Topic from './Component/topic';
 import RandomNamePicker from './Component/RandomNamePicker';
 import Location from './Component_2/location';
+import Api from './Component_3/api';
 function App() {
   return (
     <div className="App">
-      <Location/>
-      {/*<RandomNamePicker />*/}
+      <Api />
+     {/* <Location/>
+      <RandomNamePicker />*/}
     </div>
   );
 }
