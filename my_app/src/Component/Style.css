@@ -22,26 +22,6 @@
         padding-left: 20px;
     }
 
-<<<<<<< HEAD
-    /*Random Picker*/
-
-    .title{
-        text-shadow:0px 5px #800f51;
-        font-family:  'Faster One', cursive;;
-    }
-    .winner{
-        border: 2px solid #d92366;
-        font-family:' niccone';
-        color:antiquewhite;
-        border-radius: 10px;
-    }
-    .button{
-        background-color: #d9b2c0;
-        border: #d92366;
-        color: #d92366;
-    }
-    
-=======
     /*--------Random Picker---------*/
 
     /*---overall text color--*/
@@ -148,4 +128,3 @@
          color: rgba(236, 132, 27, 0.904);
          text-transform: capitalize;
      }
->>>>>>> Branch-1
