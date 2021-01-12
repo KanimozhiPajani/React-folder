@@ -4,8 +4,8 @@ import Api from './Component_3/api';
 function App() {
   return (
     <div className="App">
-      <Api />
-     {/* <Location/>*/}
+      {/*<Api />
+      <Location/>*/}
     </div>
   );
 }

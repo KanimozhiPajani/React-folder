@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './style.css';
 
- class SearchBar extends Component {
+class SearchBar extends Component {
 constructor(props) {
     super(props)
 
     this.state = {
-         searched:''
+         searched : ''
     }
 }
 change =(event) =>{
@@ -14,8 +15,8 @@ change =(event) =>{
         searched : event.target.value
         }
     )
-   
 }
+
 changeSub=(event)=>{
     event.preventDefault();
     this.props.onSubmit(this.state.searched);
@@ -23,14 +24,20 @@ changeSub=(event)=>{
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.changeSub}>
-                <input type='text' 
-                value={this.state.searched} onChange={this.change}  placeholder='search'/>
-                <button>Sumbit</button>
-                </form>
-                
+           
+            <div className='ui segment '>
+                <form onSubmit = {this.changeSub}>
+                <div className = 'field bg'>
+
+                <input type='text' className='textarea'
+                value={this.state.searched}
+                onChange={this.change} 
+                placeholder='search'/>
+         
+               </div>
+               </form>
             </div>
+          
         )
     }
 }
