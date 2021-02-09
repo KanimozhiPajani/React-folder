@@ -25,7 +25,8 @@ constructor(props) {
          capital:'',
          numbercode:null,
          timeZone:null,
-         population:null
+         population:null,
+         visible:false
     }
     
 }
@@ -48,15 +49,17 @@ componentDidMount() {
   
 change = () =>{
   this.count=[Math.floor(Math.random() * 250)];
-  const {name,currencies,capital,numericCode,timezones,population}=this.state.value
+  const {name,currencies,capital,numericCode,timezones,population,visible}=this.state.value
   this.setState({
     value:this.state.data[this.count],
+    visible:true,
     name:name,
     currencies:currencies,
     capital:capital,
     numbercode:numericCode,
     timeZone:timezones,
-    population:population  
+    population:population  ,
+  
   })
     console.log(this.state.data);
 }
@@ -67,28 +70,38 @@ select =()=>{
 const {name,currencies,capital,numericCode,timezones,population}=this.state.value
   
   this.setState({
+    
   value:this.state.data[this.state.count],
+  visible:true,
   name:name,
   currencies:currencies,
   capital:capital,
   numbercode:numericCode,
   timeZone:timezones,
-  population:population
+  population:population,
+  visible:true
   })
   }
 
     render() {
-const {name,currencies,numbercode,timeZone,capital,population}=this.state
+const {name,currencies,numbercode,timeZone,capital,population,visible}=this.state
+const button = visible ? 'Select random Countries' : 'Click'
         return (<div>
   <h1>Hello World</h1>
-  <button onClick={this.change}>Click</button>
-
-  <h1>{name}</h1>
-  <h1>{currencies}</h1>
-  <h1>{numbercode}</h1>
-  <h1>{timeZone}</h1>
-  <h1>{capital}</h1>
-  <h1>{population}</h1>
+  <button onClick={this.change}>{button}</button>
+  
+  
+{visible ? 
+  <div>
+  <h1>Name:{name}</h1>
+  <h1>Currency:{currencies}</h1>
+  <h1>Numbercode:{numbercode}</h1>
+  <h1>Timezone:{timeZone}</h1>
+  <h1>Capital:{capital}</h1>
+  <h1>Population:{population}</h1>
+  </div>
+  :null
+}
 
   <button onClick={()=>this.setState({count:0})}>Afghanistan</button>
   <button onClick={()=>this.setState({count:1})}>Åland Islands</button>
