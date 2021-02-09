@@ -26,49 +26,22 @@ constructor(props) {
          numbercode:null,
          timeZone:null,
          population:null,
-         visible:false
+         visible:false,
+         countries:false
     }
-    
 }
-componentDidMount() {
 
+//Fetching data
+componentDidMount() {
   axios.request(options)
   .then((response) => {
-      
-    if (response.data.length >0 ) {
-      this.setState({
-        data: response.data ,
-      });
-    }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-}
+        this.setState({ data: response.data });
+    })
+  }
  
-  
-change = () =>{
-  this.count=[Math.floor(Math.random() * 250)];
-  const {name,currencies,capital,numericCode,timezones,population,visible}=this.state.value
-  this.setState({
-    value:this.state.data[this.count],
-    visible:true,
-    name:name,
-    currencies:currencies,
-    capital:capital,
-    numbercode:numericCode,
-    timeZone:timezones,
-    population:population  ,
-  
-  })
-    console.log(this.state.data);
-}
-
-
-
-select =()=>{
+//Get the info of selected countries
+getInfo =()=>{
 const {name,currencies,capital,numericCode,timezones,population}=this.state.value
-  
   this.setState({
     
   value:this.state.data[this.state.count],
@@ -79,42 +52,50 @@ const {name,currencies,capital,numericCode,timezones,population}=this.state.valu
   numbercode:numericCode,
   timeZone:timezones,
   population:population,
-  visible:true
-  })
-  }
 
-    render() {
-const {name,currencies,numbercode,timeZone,capital,population,visible}=this.state
-const button = visible ? 'Select random Countries' : 'Click'
-        return (<div>
-  <h1>Hello World</h1>
-  <button onClick={this.change}>{button}</button>
-  
-  
-{visible ? 
-  <div>
-  <h1>Name:{name}</h1>
-  <h1>Currency:{currencies}</h1>
-  <h1>Numbercode:{numbercode}</h1>
-  <h1>Timezone:{timeZone}</h1>
-  <h1>Capital:{capital}</h1>
-  <h1>Population:{population}</h1>
-  </div>
-  :null
+  })
 }
 
-  <button onClick={()=>this.setState({count:0})}>Afghanistan</button>
-  <button onClick={()=>this.setState({count:1})}>Åland Islands</button>
-  <button onClick={()=>this.setState({count:144})}>Mexico</button>
-  <button onClick={()=>this.setState({count:185})}>Russia</button>
-  <button onClick={()=>this.setState({count:202})}>Singapore</button>
-  <button onClick={()=>this.setState({count:104})}>India</button>
-  <button onClick={()=>this.setState({count:17})}>Bahrain</button>
-  <button onClick={()=>this.setState({count:48})}>China</button>
-  <button onClick={()=>this.setState({count:112})}>Italy</button>
-  <button onClick={()=>this.setState({count:114})}>Japan</button>
+//Render
+    render() {
+       const {name,currencies,numbercode,timeZone,capital,population,visible,countries}=this.state
+       const button = visible ? 'Select random Countries' : 'Title'
+
+    return (
+    <div>
+      
+        <button onClick={()=>{
+              this.setState({ count:[Math.floor(Math.random() * 250)],
+              visible:true,})}}>{button}</button>
   
-  <button onClick={this.select}>Get</button>
+        <button onClick={()=>{this.setState({countries:!countries})}}>Get contries list</button> 
+
+        {visible ? 
+        <div>
+          <h1>Name:{name}</h1>
+          <h1>Currency:{currencies}</h1>
+          <h1>Numbercode:{numbercode}</h1>
+          <h1>Timezone:{timeZone}</h1>
+          <h1>Capital:{capital}</h1>
+          <h1>Population:{population}</h1>
+        </div>
+        :null}
+
+        {countries ? 
+        <div>
+           <button onClick={()=>this.setState({count:0})}>Afghanistan</button>
+           <button onClick={()=>this.setState({count:1})}>Åland Islands</button>
+           <button onClick={()=>this.setState({count:144})}>Mexico</button>
+           <button onClick={()=>this.setState({count:185})}>Russia</button>
+           <button onClick={()=>this.setState({count:202})}>Singapore</button>
+           <button onClick={()=>this.setState({count:104})}>India</button>
+           <button onClick={()=>this.setState({count:17})}>Bahrain</button>
+           <button onClick={()=>this.setState({count:48})}>China</button>
+           <button onClick={()=>this.setState({count:112})}>Italy</button>
+           <button onClick={()=>this.setState({count:114})}>Japan</button>
+        </div>:null}
+  
+  <button onClick={this.getInfo}>Get Information</button>
 </div>
         )
     }
