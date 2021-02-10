@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import './style.css'
 
+//Api
 const options = {
   method: 'GET',
   url: 'https://restcountries-v1.p.rapidapi.com/all',
@@ -13,12 +15,10 @@ const options = {
 
 export class index extends Component {
 
-constructor(props) {
-    super(props)
-
-    this.state = {
-         data : [],
-         value:[],
+state = {
+         data : [],//info of 250 
+         value:[],//info of selected index
+         //needed info
          name:'',
          count:null,
          currencies:'',
@@ -26,10 +26,12 @@ constructor(props) {
          numbercode:null,
          timeZone:null,
          population:null,
-         visible:false,
-         countries:false
+         //display
+         countries:false,
+         info:false,
+         list:false
     }
-}
+
 
 //Fetching data
 componentDidMount() {
@@ -41,10 +43,11 @@ componentDidMount() {
  
 //Get the info of selected countries
 getInfo =()=>{
-const {name,currencies,capital,numericCode,timezones,population}=this.state.value
+const {name,currencies,capital,numericCode,timezones,population}=this.state.value;
+const {data,count} = this.state
+
   this.setState({
-    
-  value:this.state.data[this.state.count],
+  value:data[count],
   visible:true,
   name:name,
   currencies:currencies,
@@ -52,37 +55,54 @@ const {name,currencies,capital,numericCode,timezones,population}=this.state.valu
   numbercode:numericCode,
   timeZone:timezones,
   population:population,
-
   })
 }
 
 //Render
     render() {
-       const {name,currencies,numbercode,timeZone,capital,population,visible,countries}=this.state
-       const button = visible ? 'Select random Countries' : 'Title'
+       const {name,currencies,numbercode,timeZone,capital,population,visible,countries,info,list}=this.state
+       const button = visible ? 'Select random Countries' : 'Get start'
 
     return (
     <div>
+
+      {/*Header*/}
+      <nav className='nav'>
+        <img src="https://www.wbdc.org/wp-content/uploads/2016/05/att_globe_rgb_pos.png" 
+        width='100px' height='90px' 
+        className="logo"/>
+      </nav>
+
+      {/*Text*/}
+      <h2 className='mt-7 text'>Get information about countries </h2>
       
+      {/*Random selector*/}
         <button onClick={()=>{
               this.setState({ count:[Math.floor(Math.random() * 250)],
-              visible:true,})}}>{button}</button>
-  
-        <button onClick={()=>{this.setState({countries:!countries})}}>Get contries list</button> 
+              visible:true,info:true,list:true})}}
+              className='button mt-4'>{button}</button>
 
+      {/*Countries list*/}
+        {list ?
+        <button onClick={()=>{this.setState({countries:!countries})}}
+        className='button ml-4'>Get countries list</button>
+        : null} 
+
+      {/*Rendering fetched data*/}
         {visible ? 
-        <div>
-          <h1>Name:{name}</h1>
-          <h1>Currency:{currencies}</h1>
-          <h1>Numbercode:{numbercode}</h1>
-          <h1>Timezone:{timeZone}</h1>
-          <h1>Capital:{capital}</h1>
-          <h1>Population:{population}</h1>
+        <div className='mt-5 mb-2'>
+          <h2>Name : {name}</h2>
+          <h3>Capital : {capital}</h3>
+          <h3>Currency : {currencies}</h3>
+          <h3>Population : {population}</h3>
+          <h3>Numbercode : {numbercode}</h3>
+          <h3>Timezone : {timeZone}</h3>
         </div>
         :null}
 
+     {/*List*/}
         {countries ? 
-        <div>
+        <div onClick={()=>{this.setState({info:true})}} className='button1'>
            <button onClick={()=>this.setState({count:0})}>Afghanistan</button>
            <button onClick={()=>this.setState({count:1})}>Åland Islands</button>
            <button onClick={()=>this.setState({count:144})}>Mexico</button>
@@ -94,8 +114,21 @@ const {name,currencies,capital,numericCode,timezones,population}=this.state.valu
            <button onClick={()=>this.setState({count:112})}>Italy</button>
            <button onClick={()=>this.setState({count:114})}>Japan</button>
         </div>:null}
-  
-  <button onClick={this.getInfo}>Get Information</button>
+
+      {/*Getting info*/}
+        {info ? 
+           <button onClick={this.getInfo}
+            className='button mt-5'>Get Information</button>:null}
+
+      {/*Steps*/}
+        <div className='mt-5 text br-2 '>
+          <h3>STEPS:</h3>
+          <h4>1. Click the button "Get start" to start the application</h4>
+          <h4>2. To get  randomly selected countries "Select random countries" </h4>
+          <h4>3. To get info about specific countries select "countries list"</h4>
+          <h4>4. Double click "Get info" button</h4>
+        </div>
+
 </div>
         )
     }
