@@ -1,0 +1,37 @@
+body{
+    box-sizing: border-box;
+    background-color:#d9d9d9;
+}
+
+.bg{
+    background-image: url('https://www.hdwallpaper.nu/wp-content/uploads/2018/10/frozen-7-1024x640.jpg');
+}
+
+.textarea{
+    width: 30%;
+    height: 40px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 3px;
+    margin: 8px 0px 8px 0px;
+}
+
+.image{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px ,1fr));
+    grid-gap:8px;
+    grid-auto-rows:5px;
+    margin-top: 30px;
+}
+
+.image img{
+    width: 250px;
+    border-radius: 1px;
+
+}
+
+.image img:hover{
+    width: 280px;
+}
+
+
