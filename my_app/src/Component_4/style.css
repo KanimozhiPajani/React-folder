@@ -1,10 +1,32 @@
-*{
-    background-color: white;
+body{
+    background-color:#66ccff;
 }
-
-.buttonE{
-    background-color: green;
+.logo{
+    float: left;
+    margin-left: 0%;
 }
-.buttonD{
-    background-color: red;
+.nav{
+    background-color:#33ff33;
+}
+.text{
+    color: white;
+}
+.button{
+    width: auto;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    border-color: transparent;
+    box-shadow: 0px 2px 0px 2px grey;
+}
+.button1{
+    margin-top: 40px;
+}
+.button1 button{
+    margin-right: 10px;
+    width: auto;
+    height: 30px;
+    border-radius: 5px;
+    border-color: transparent;
+    font-size: 16px;
 }
